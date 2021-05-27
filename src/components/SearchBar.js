@@ -46,7 +46,7 @@ const SearchBar = ({ filterType }) => {
             type: actions.searchCards,
             payload: ""
         });
-    }, []);
+    }, [dispatch]);
 
     const handleChange = (e) => {
         dispatch({

@@ -49,7 +49,7 @@ const ListCards = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         if (state.searchBar === "") {
@@ -64,9 +64,10 @@ const ListCards = () => {
             if (name.includes(payload)) {
                 return item;
             }
+            return null;
         });
         dispatch({ type: actions.filterCards, payload: busqueda });
-    }, [state.searchBar]);
+    }, [dispatch, state.searchBar, state.cards]);
 
     return ( 
         <div className={classes.root}>

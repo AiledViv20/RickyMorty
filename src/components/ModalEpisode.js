@@ -47,7 +47,7 @@ const ModalEpisode = ({ idSelect, open, handleClose }) => {
             }
         }
         fetchData();
-    }, []);
+    }, [idSelect]);
 
     return ( 
         <div>
