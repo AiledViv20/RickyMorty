@@ -76,6 +76,7 @@ const ListCards = () => {
                         return (
                             <Grid item xs={4} key={idx} className={classes.center}>
                                 <CardUser 
+                                    id={item.id}
                                     name={item.name}
                                     gender={item.gender}
                                     origin={item.origin.name}

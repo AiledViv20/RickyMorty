@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const CardUser = ({ name, gender, origin, type, image, color, status }) => {
+const CardUser = ({ id, name, gender, origin, type, image, color, status }) => {
     const classes = useStyles();
 
     const firstLetter = () => {
@@ -33,7 +33,7 @@ const CardUser = ({ name, gender, origin, type, image, color, status }) => {
     }
 
     return ( 
-      <Card className={classes.root}>
+      <Card id={id} className={classes.root}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" style={{ backgroundColor: color }}>
