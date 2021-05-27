@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { CardFilterContext } from "../context/CardFilterContext";
 import { actions } from "../context/CardFilterContext/actions";
+import CardUser from './CardUser';
 import api from '../helpers/api';
 
 const ListCards = () => {
@@ -30,7 +31,7 @@ const ListCards = () => {
     }, []);
 
     return ( 
-        <h1>ListCards</h1>
+        <CardUser />
     );
 }
  
