@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext,  } from 'react';
+import React, { useEffect, useContext,  } from 'react';
 import {
     makeStyles,
     Paper,
@@ -40,28 +40,20 @@ const useStyles = makeStyles((theme) => ({
 const SearchBar = ({ filterType }) => {
     const classes = useStyles();
     const { state, dispatch } = useContext(CardFilterContext);
-    const [value, setValue] = useState({
-        searchBar: ""
-    });
 
     useEffect(() => {
-        setValue({
-            searchBar: ""
+        dispatch({
+            type: actions.searchCards,
+            payload: ""
         });
     }, []);
 
     const handleChange = (e) => {
-        setValue({
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const searchCard = () => {
         dispatch({
             type: actions.searchCards,
-            payload: value.searchBar
+            payload: e.target.value
         });
-    }
+    };
 
     const submitData = (e) => {
         e.preventDefault();
@@ -74,10 +66,10 @@ const SearchBar = ({ filterType }) => {
                     name="searchBar"
                     className={classes.input}
                     placeholder="Buscar..."
-                    value={value.searchBar}
+                    value={state.searchBar}
                     onChange={handleChange}
                 />
-                <IconButton onClick={() => searchCard()} className={classes.iconButton} aria-label="search">
+                <IconButton type="button" className={classes.iconButton} aria-label="search">
                     <SearchIcon />
                 </IconButton>
             </Paper>
