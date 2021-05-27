@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
+    center: {
+        display: 'flex',
+        justifyContent: 'center'
+    }
 }));
 
 const ListCards = () => {
@@ -70,12 +74,12 @@ const ListCards = () => {
                 {state.cardsFilter ? 
                     state.cardsFilter.map((item, idx) => {
                         return (
-                            <Grid item xs={4} key={idx}>
+                            <Grid item xs={4} key={idx} className={classes.center}>
                                 <CardUser 
                                     name={item.name}
                                     gender={item.gender}
-                                    origin={origin.name}
-                                    type={item.origin.type}
+                                    origin={item.origin.name}
+                                    type={item.type}
                                     image={item.image}
                                     color={colorHEX()}/>
                             </Grid>

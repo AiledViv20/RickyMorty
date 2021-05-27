@@ -11,8 +11,9 @@ import {
 
 const useStyles = makeStyles(() => ({
     root: {
-      maxWidth: 345,
-
+      maxWidth: '100%',
+      width: '66%',
+      marginBottom: '20px'
     },
     media: {
       height: 0,
@@ -35,8 +36,8 @@ const CardUser = ({ name, gender, origin, type, image, color }) => {
               {firstLetter()}
             </Avatar>
           }
-          title={name ? name : null}
-          subheader={gender ? gender : null}
+          title={name ? name : ""}
+          subheader={gender ? `${gender === "Male" ? "Hombre" : "Mujer"}` : ""}
         />
         <CardMedia
           className={classes.media}
@@ -44,9 +45,11 @@ const CardUser = ({ name, gender, origin, type, image, color }) => {
           title={name ? name : null}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          <Typography variant="body2" color="textSecondary" gutterBottom>
+            {`${origin ? `Origen: ${origin}` : ""}`}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
+          {`${type ? `Tipo: ${type}` : ""}`}
           </Typography>
         </CardContent>
       </Card>
