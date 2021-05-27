@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import styled from "styled-components";
+import ListCards from '../components/ListCards';
 
 export const Wrapper = styled.div`
     height:100%;
@@ -28,6 +29,7 @@ const Home = () => {
                     <SearchBar filterType={"Se puede buscar por nombre"}/>
                 </Container>
             </Wrapper>
+            <ListCards />
         </Fragment>
     );
 }
