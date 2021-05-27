@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { CardFilterContext } from "../context/CardFilterContext";
 import { actions } from "../context/CardFilterContext/actions";
 import { colorHEX } from '../helpers';
