@@ -47,6 +47,23 @@ const ListCards = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (state.searchBar === "") {
+            return dispatch({ 
+                type: actions.filterCards, 
+                payload: state.cards 
+            });
+        }
+        const busqueda = state.cards.filter((item) => {
+            const payload = state.searchBar.toLowerCase();
+            const name = item.name.toLowerCase();
+            if (name.includes(payload)) {
+                return item;
+            }
+        });
+        dispatch({ type: actions.filterCards, payload: busqueda });
+    }, [state.searchBar]);
+
     return ( 
         <div className={classes.root}>
             <Grid container>
