@@ -8,6 +8,7 @@ import {
     Avatar,
     Typography
 } from '@material-ui/core';
+import ChipUser from './ChipUser';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -19,9 +20,12 @@ const useStyles = makeStyles(() => ({
       height: 0,
       paddingTop: '56.25%',
     },
+    space: {
+      paddingLeft: '5px'
+    }
 }));
 
-const CardUser = ({ name, gender, origin, type, image, color }) => {
+const CardUser = ({ name, gender, origin, type, image, color, status }) => {
     const classes = useStyles();
 
     const firstLetter = () => {
@@ -45,10 +49,11 @@ const CardUser = ({ name, gender, origin, type, image, color }) => {
           title={name ? name : null}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <ChipUser status={status}/>
+          <Typography variant="body2" color="textSecondary" gutterBottom className={classes.space}>
             {`${origin ? `Origen: ${origin}` : ""}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography variant="body2" color="textSecondary" gutterBottom className={classes.space}>
           {`${type ? `Tipo: ${type}` : ""}`}
           </Typography>
         </CardContent>

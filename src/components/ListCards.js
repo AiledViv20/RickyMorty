@@ -81,7 +81,8 @@ const ListCards = () => {
                                     origin={item.origin.name}
                                     type={item.type}
                                     image={item.image}
-                                    color={colorHEX()}/>
+                                    color={colorHEX()}
+                                    status={item.status}/>
                             </Grid>
                         )
                     }) 
