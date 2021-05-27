@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.css';
+import CardFilterProvider from './context/CardFilterContext';
+import Home from './page/Home';
 
 function App() {
   return (
-    <h1>Hello</h1>
+    <CardFilterProvider>
+      <Home />
+    </CardFilterProvider>
   );
 }
 
